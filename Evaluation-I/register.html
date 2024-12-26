@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Application Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+        *{
+        margin: 0;
+        }
+        body{
+            background-color: #d6f1f1;
+            font-family: Lato;
+        }
+        .box{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 210dvh;
+            width: 85dvw;
+            background-color: white;
+            margin-top: 8dvh;
+            border-radius: 20px;
+            padding-left: 5dvw;
+            padding-right: 5dvw;
+            padding-top: 5dvh;
+            margin-bottom: 5vh;
+        }
+        .heading{
+            font-size: 36px;
+        }
+        .subhead{
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+        .head{
+            margin-top: 30px;
+            margin-bottom: 8px;
+            font-size: 17px;
+        }
+        .input{
+            margin-top: 10px;
+            width: 31.5%;
+            margin-right: 0.4vw;
+            height: 3.5dvh;
+            border: 0;
+            border-bottom: 1px solid black;
+            border-radius: 5px;
+            padding-left: 8px;
+            outline: 0;
+            font-size: 15px;
+            padding-bottom: 5px;
+        }
+        textarea{
+            width: 100%;
+            height: 10dvh;
+            border: 0;
+            border-bottom: 1px solid black;
+        }
+        .submitbox{
+            margin-top: 5vh;
+            height: 40px;
+            width: 100%;
+            background-color: #7b5831;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        a{
+            text-decoration: none;
+        }
+        .final{
+            color: white;
+            text-align: center;
+            font-size: 3dvh;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p class="heading">College Application Form</p>
+        <p class="subhead" >If you'd like to apply to our college, please fill in this College Admission Form and we will contact you as soon as possible.</p>
+        <hr>
+        <form action="/register" method="POST">
+            <p class="head">First Name of Applicant</p>
+                <input type="text" name="first_name" id="first_name" class="input" placeholder="First" >
+                <input type="text" name="middle_name" id="middle_name" class="input" placeholder="Middle" >
+                <input type="text" name="last_name" id="last_name" class="input" placeholder="Last" >
+            <p class="head">Date of Birth</p>
+            <input type="date" name="dob" id="dob" class="input" style="width: 100%;" >
+            <p class="head">Applicant's Phone</p>
+            <input type="number" name="phone" id="phone" class="input" style="width: 100%;" placeholder="### ### ####" >
+            <p class="head">Permanent Address</p>
+            <input type="text" name="street_address" id="street_address" class="input" style="width: 100%;" placeholder="Street Address" >
+            <br>
+            <input type="text" name="city" id="city" class="input" placeholder="City" style="width: 49%;" >
+            <input type="text" name="state" id="state" class="input" placeholder="State" style="width: 48%;" >
+            <br>
+            <input type="number" name="zip_code" id="zip_code" class="input" placeholder="Postal / Zip Code" style="width: 49%;" >
+            <select name="country" id="country" class="input" style="width: 49%;" >
+                <option value="">Country</option>
+                <option value="India">India</option>
+                <option value="Pakistan">Pakistan</option>
+            </select>
+            <br><br><br><hr>
+            <p class="head">Parent / Guardian Name</p>
+            <input type="text" name="parent_first_name" id="parent_first_name" class="input" placeholder="First" >
+            <input type="text" name="parent_middle_name" id="parent_middle_name" class="input" placeholder="Middle" >
+            <input type="text" name="parent_last_name" id="parent_last_name" class="input" placeholder="Last" >
+            <p class="head">Parent / Guardian Phone Number</p>
+            <input type="number" name="parent_phone" id="parent_phone" class="input" style="width: 100%;" placeholder="### ### ####" >
+            <p class="head">Parent / Guardian Occupation</p>
+            <input type="text" name="parent_occupation" id="parent_occupation" class="input" style="width: 100%;" >
+            <br><br><br><hr>
+            <p class="head">Program Applied for:</p>
+            <input type="radio" name="program" id="be" value="B.E.">
+            <span>Bachelor of Engineering (B.E.) </span>
+            <br><br>
+            <input type="radio" name="program" id="ba" value="B.A.">
+            <span>Bachelors in Arts (B.A.)</span>
+            <br><br>
+            <input type="radio" name="program" id="bsc" value="B.Sc.">
+            <span>Bachelor in Science (B.Sc.) Medical & Non-Medical.</span>
+            <br><br>
+            <input type="radio" name="program" id="bcom" value="B.Com.">
+            <span>Bachelor in Commerce (B.Com.) </span>
+            <br>
+            <p class="head">Academic Qualifications:</p>
+            <textarea name="academic_qualifications" id="academic_qualifications"></textarea>
+            <p class="head">Applicant Signature</p>
+            <input type="file" name="signature" id="signature">
+            <br><br>
+            <input type="submit" class="submitbox" value="SUBMIT THE COLLEGE APPLICATION FORM">
+        </form>
+    </div>
+</body>
+</html>

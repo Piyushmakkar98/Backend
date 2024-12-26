@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database</title>
+    <style>
+        h1 {
+            color: #4A90E2; 
+            text-align: center;
+            text-decoration: underline;
+            font-family: 'Arial', sans-serif;
+        }
+    
+        #grid-container {
+            width: 90%;
+            margin: 0 auto; 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px; 
+            background-color: #f9f9f9; 
+            padding: 10px;
+            border: 1px solid #ddd; 
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        #grid-container div {
+            background-color: #ffffff; 
+            border: 1px solid #ddd;
+            border-radius: 8px; 
+            padding: 15px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease; 
+        }
+    
+        #grid-container div:hover {
+            transform: scale(1.02); 
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); 
+        }
+    
+        #grid-container div p {
+            margin: 5px 0; 
+            color: #333333; 
+            font-size: 14px;
+            font-family: 'Arial', sans-serif;
+        }
+    
+        #grid-container div p:first-child {
+            font-weight: bold; 
+            font-size: 16px;
+            color: #4A90E2; 
+        }
+    
+        body {
+            background-color: #f0f4f8; 
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1>College Student Database</h1>
+    <div id="grid-container">
+
+    </div>
+
+    <script>
+        fetch("http://localhost:3000")
+            .then((response) => {return response.json(); })
+            .then((data) => {
+
+                data.forEach(student => {
+
+                    const div = document.createElement('div');
+
+                    const firstNameCell = document.createElement('p');
+                    const middleNameCell = document.createElement('p');
+                    const lastNameCell = document.createElement('p');
+                    const dobCell = document.createElement('p');
+                    const phoneCell = document.createElement('p');
+                    const streetAddressCell = document.createElement('p');
+                    const cityCell = document.createElement('p');
+                    const stateCell = document.createElement('p');
+                    const zipCodeCell = document.createElement('p');
+                    const countryCell = document.createElement('p');
+                    const parentFirstNameCell = document.createElement('p');
+                    const parentMiddleNameCell = document.createElement('p');
+                    const parentLastNameCell = document.createElement('p');
+                    const parentPhoneCell = document.createElement('p');
+                    const parentOccupationCell = document.createElement('p');
+                    const programCell = document.createElement('p');
+                    const academicQualificationsCell = document.createElement('p');
+                    const signatureCell = document.createElement('p');
+
+                    firstNameCell.textContent = "First Name: " + (student.first_name || 'N/A');
+                    middleNameCell.textContent = "Middle Name: " + (student.middle_name || 'N/A');
+                    lastNameCell.textContent = "Last Name: " + (student.last_name || 'N/A');
+                    dobCell.textContent = "Date of Birth: " + (student.dob || 'N/A');
+                    phoneCell.textContent = "Phone: " + (student.phone || 'N/A');
+                    streetAddressCell.textContent = "Street Address: " + (student.street_address || 'N/A');
+                    cityCell.textContent = "City: " + (student.city || 'N/A');
+                    stateCell.textContent = "State: " + (student.state || 'N/A');
+                    zipCodeCell.textContent = "Zip Code: " + (student.zip_code || 'N/A');
+                    countryCell.textContent = "Country: " + (student.country || 'N/A');
+                    parentFirstNameCell.textContent = "Parent First Name: " + (student.parent_first_name || 'N/A');
+                    parentMiddleNameCell.textContent = "Parent Middle Name: " + (student.parent_middle_name || 'N/A');
+                    parentLastNameCell.textContent = "Parent Last Name: " + (student.parent_last_name || 'N/A');
+                    parentPhoneCell.textContent = "Parent Phone: " + (student.parent_phone || 'N/A');
+                    parentOccupationCell.textContent = "Parent Occupation: " + (student.parent_occupation || 'N/A');
+                    programCell.textContent = "Program Applied For: " + (student.program || 'N/A');
+                    academicQualificationsCell.textContent = "Academic Qualifications: " + (student.academic_qualifications || 'N/A');
+                    signatureCell.textContent = "Signature: " + (student.signature || 'N/A');
+
+
+                    div.appendChild(firstNameCell);
+                    div.appendChild(middleNameCell);
+                    div.appendChild(lastNameCell);
+                    div.appendChild(dobCell);
+                    div.appendChild(phoneCell);
+                    div.appendChild(streetAddressCell);
+                    div.appendChild(cityCell);
+                    div.appendChild(stateCell);
+                    div.appendChild(zipCodeCell);
+                    div.appendChild(countryCell);
+                    div.appendChild(parentFirstNameCell);
+                    div.appendChild(parentMiddleNameCell);
+                    div.appendChild(parentLastNameCell);
+                    div.appendChild(parentPhoneCell);
+                    div.appendChild(parentOccupationCell);
+                    div.appendChild(programCell);
+                    div.appendChild(academicQualificationsCell);
+                    div.appendChild(signatureCell);
+
+                    const grid = document.getElementById('grid-container');
+                    grid.appendChild(div);
+
+             })
+
+            })
+    </script>
+</body>
+
+</html>
