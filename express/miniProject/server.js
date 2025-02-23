@@ -3,7 +3,8 @@ const app = express();
 const file = express('fs');
 
 app.use((req,res,next) => {
-    console.log(`${req.method} request for ${req.url} with ip address: ${req.ip}`);
+    const logMessage = `${req.method} request for ${req.url} with IP address: ${req.ip}\n`;
+    console.log(logMessage);
     next();
 });
 
